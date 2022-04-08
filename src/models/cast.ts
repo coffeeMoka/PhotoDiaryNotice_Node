@@ -1,4 +1,4 @@
-import {Model, DataTypes, Sequelize, Association} from "sequelize"
+import { Model, DataTypes, Sequelize } from "sequelize"
 
 export default class Cast extends Model {
   public id!: number;
@@ -25,5 +25,5 @@ export default class Cast extends Model {
     return this;
   }
 
-  static assonciate(){}
+  static assonciate() { }
 }
