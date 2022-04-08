@@ -8,7 +8,7 @@ module.exports = {
     mode: "development",
     externals: [nodeExternals()],
     target: "node",
-    entry: `${src}/index.ts`,
+    entry: `${src}/main.ts`,
     output: {
         path: dist,
         filename: "bundle.js"
