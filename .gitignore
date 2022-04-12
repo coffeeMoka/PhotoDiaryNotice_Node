@@ -105,4 +105,4 @@ dist
 
 config/config.json
 
-.DS_Store/
+.DS_Store
