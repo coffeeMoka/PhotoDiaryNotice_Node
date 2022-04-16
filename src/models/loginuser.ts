@@ -1,7 +1,9 @@
 import { Model, DataTypes, Sequelize } from "sequelize"
+import ScrapingTargetList from "./scrapingtargetlist";
 
 export default class LoginUser extends Model {
   public id!: number;
+  public userId!: number;
   public name!: string;
   public password!: string;
 
@@ -10,6 +12,7 @@ export default class LoginUser extends Model {
 
   static initialize(sequelize: Sequelize) {
     this.init({
+      userId: DataTypes.INTEGER,
       name: DataTypes.STRING,
       password: DataTypes.STRING
     }, {
@@ -18,5 +21,10 @@ export default class LoginUser extends Model {
     })
     return this;
   }
-  static assonciate() { }
+  static assonciate() {
+    LoginUser.belongsTo(ScrapingTargetList, {
+      foreignKey: "userId",
+      as: "siteId"
+    })
+  }
 }

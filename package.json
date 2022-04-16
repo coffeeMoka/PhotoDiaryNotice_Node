@@ -8,7 +8,7 @@
     "build": "npx webpack",
     "start": "node ./dist/bundle.js",
     "migrate": "npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all",
-    "migrate:unddo": "npx sequelize-cli db:migrate:undo:all"
+    "migrate:undo": "npx sequelize-cli db:migrate:undo:all"
   },
   "repository": {
     "type": "git",
