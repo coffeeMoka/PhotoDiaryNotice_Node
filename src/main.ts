@@ -1,13 +1,8 @@
 import * as puppeteer from "puppeteer";
-import Cast from "./models/cast"
-import { serv } from "./server";
-
-console.log("Hello, world");
-serv();
-console.log(Cast.name);
+import Server from "./server";
 
 const launchOptions: puppeteer.BrowserLaunchArgumentOptions = {
-    headless: false,
+    headless: true,
     args: [
         "--no-sandbox",
         "--disable-setuid-sandbox"
@@ -23,6 +18,8 @@ const waitOptions: puppeteer.WaitForOptions = {
     const page: puppeteer.Page = await browser.newPage();
     await page.goto("https://www.google.com/", waitOptions);
 
+    const target = await Server.getObj();
+    console.log(`${target.hp}, ${target.url}, ${target.loginUser.user}, ${target.loginUser.password}`);
     await browser.close();
     console.log("end");
 })();

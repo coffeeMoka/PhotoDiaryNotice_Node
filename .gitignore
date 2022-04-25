@@ -103,6 +103,6 @@ dist
 # TernJS port file
 .tern-port
 
-config/config.json
+config.json
 seeders/
 .DS_Store
